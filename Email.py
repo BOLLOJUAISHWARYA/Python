@@ -16,7 +16,6 @@ server = smtplib.SMTP("smtp.gmail.com", 587)
 server.starttls()       #puts the connection to the SMTP server into TLS mode.
 print("trying to login")
 server.login(From_mail, password)
-server.set_debuglevel(1)
 print("login in successful")
 server.sendmail(From_mail,[to]+cc+bcc, email)
 server.close()
