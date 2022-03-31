@@ -1,7 +1,7 @@
 import smtplib
 
 From_mail = 'aishwarya.bolloju@gmail.com'
-password = "ymfmdgotbmhnottr"
+password = ""
 
 to = "vibha.rawan@neosoftmail.com"
 cc = ["sai.uddaraju@neosoftmail.com", "anushka.mhatre@neosoftmail.com"]
