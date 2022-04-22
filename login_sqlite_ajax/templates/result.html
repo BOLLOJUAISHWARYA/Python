@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>{{Welcome}}</h1>
+    <p id="displaymsg">Your Details</p>
+    <table border="1" id="records">
+        <thead>
+            <td>id</td>
+            <td>Name</td>
+            <td>city</td>
+            <td>pin</td>
+            <td>password</td>
+        </thead>
+
+        {% for row in rows %}
+
+        <tr>
+            <td>{{row['id']}}</td>
+            <td>{{row['name']}}</td>
+            <td>{{row['city']}}</td>
+            <td>{{row['pin']}}</td>
+            <td>{{row['password']}}</td>
+        </tr>
+
+        {% endfor %}
+        <br>
+        <br>
+    </table>
+        <br>
+        <br>
+        <a href="/update" id="update">Update</a>
+        <br>
+        <br>
+        <br>
+        <button id="delete">Delete</button>
+        <input id="id"/>
+        <br>
+        <br>
+        <br>
+
+    <script>
+        $(document).ready(function(){
+            $(document).on("click", "#delete", function(){
+            var id = $('#id').val();
+            var string = id;
+
+            console.log("started");
+            $.post("/delete", { string: string},function(data){
+            alert(data)
+            $("#records").hide();
+            $("#displaymsg").hide();
+            $("#update").hide();
+
+            });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

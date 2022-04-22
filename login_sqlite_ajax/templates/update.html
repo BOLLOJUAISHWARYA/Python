@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+
+<body>
+    <p id="msg"></p>
+    <form action='/updaterecord' method="POST" id="updateform">
+        <h3>Information</h3>
+        Id<br>
+        <input type="text" name="id"/><br><br>
+        Name<br>
+        <input type="text" name="name"/><br><br>
+        City<br>
+        <input type="text" name="city"/><br><br>
+        Pin<br>
+        <input type="text" name="pin"/><br><br>
+        Password<br>
+        <input type="password" name="pwd"/><br><br>
+        <input type="submit" value="submit" id="submit"><br>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+</body>
+</html>
+
+

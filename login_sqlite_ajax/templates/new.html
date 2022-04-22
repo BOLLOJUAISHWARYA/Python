@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME PAGE</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form id="registration" action='/add' method="POST">
+        <h3>Information</h3>
+        ID<br>
+        <input type="text" name="id" id="id"/><br><br>
+        Name<br>
+        <input type="text" name="name" id="name"/><br><br>
+        City<br>
+        <input type="text" name="city" id="city"/><br><br>
+        Pin<br>
+        <input type="text" name="pin" id="pin"/><br><br>
+        Password<br>
+        <input type="password" name="pwd" id="pwd"/><br><br>
+        <input type="submit" value="submit" id="save-button"><br>
+    </form>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</body>
+
+</html>
+
