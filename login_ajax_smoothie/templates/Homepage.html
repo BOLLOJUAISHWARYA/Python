@@ -1,0 +1,128 @@
+<html>
+    <head>
+    <title>Smoothie & Gut</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Important words">
+        <meta name="description" content="short description">
+        <meta name="author" content="Aishwarya">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/Homepage.css">
+        <link rel="icon" href="/static/Home-images/logo image.jpg">
+    </head>
+    <body>
+        <header class="header">
+            <nav class="navbar flex">
+                <span class="flex navleft navfont">
+                    <a href="Homepage.html">HOME</a>
+                    <a href="#aboutus">ABOUT US</a>
+                    <a href="#whysmoothie">WHY SMOOTHIE!?</a>
+                    <a href="menu.html">MENU</a>
+                </span>
+                <span class="navcenter flex">
+                    <a href="/"><img class="logoimage" alt="Smoothie logo" src="https://previews.123rf.com/images/euandronova/euandronova1807/euandronova180700018/105384606-vector-illustration-of-vegan-detox-smoothie-logo-for-vegans-ingredients-for-detox-drink-.jpg"></a>
+                </span>
+                <span class="navright navfont flex">
+                    <a href="#location">LOCATION</a>
+                    <a href="#ordernowsection">ORDER NOW</a>
+                    <a href="partner.html">PARTNER</a>
+                    <a href="Homepage.html">FEEDBACK</a>
+                </span>
+            </nav>
+        </header>
+
+        <section class="captionsection">
+            <div class="caption">
+                <p class="captionfont"> TRY ONCE ,<br><span class="captionfont2"> drink forever.</span></p>
+            </div>
+        </section>
+
+        <section class="homepagebackground">
+        
+            <div class="description" id="aboutus">
+                <h4 class="heading"></h4>
+                <form action="login" method="POST"  id="loginpage" name="loginpage">
+                    <input class="username-login" id="username-login" name ="username-login" type="text" placeholder="username">
+                    <br>
+                    <input class="password-login" id="password-login" name="password-login" type="password" placeholder="password">
+                    <br>
+                    <button type="submit"  class="btn btn-primary">Login</button>
+                </form>
+                <br>
+                <button id="register" class="btn btn-primary" style="margin-left:190px">Register</button>
+                <p id="server-results"><!-- For server results --></p>
+                <form name="registrationform" action='registration' method="POST"  id="registrationform"  style="display:none" onsubmit="return validateForm()">
+                    <input class="name" name="name" type="text" placeholder="name" id="name">
+                    <br>
+                    <input class="username" name="username" type="text" placeholder="username" id="username">
+                    <br>
+                    <input class="city" name="city" type="text" placeholder="city" id="city">
+                    <br>
+                    <input class="pin" name="pin" type="text" placeholder="pin" id="pin">
+                    <br>
+                    <input class="password" name="password" type="password" placeholder="password" id="password">
+                    <br>
+                    <button type="submit"  class="btn btn-primary" id="registerbutton">Register</button>
+                </form>
+
+                <img id="smoothiehomeimg1" class="imagetoshake"  src="static/Home-images/homepageimage.jpg">
+            </div>
+
+            <br><br>
+
+
+        </section>
+
+        <section id="ordernowsection" style="text-align: center;">
+            <img src="static/Home-images/swiggy.jpg" alt="Swiggyimage" class="ordernow">
+            <img src="static/Home-images/zomato.jpg" alt="Zomatoimage" class="ordernow">
+        </section>
+
+        <br>
+
+        <footer>
+            <div class="footerlogo">
+                <img class="logoimage" alt="footerlogo" src="static/Home-images/logo2.webp">
+            </div> 
+
+            <div id="location" class="footerfont">
+                <h5>SMOOTHIE & GUT</h5>
+                <p>CORPORATE OFFICE,ROAD NO 14, Hyderabad, Telangana, 500036</p>
+            </div>
+
+            <div id="followus" style="text-align:center;">
+                <a href="/"><img src="static/Home-images/icons8-facebook-50.png" alt="facebooklink"></a>
+                <a href="/"><img src="static/Home-images/icons8-instagram-50.png" alt="instagramlink"></a>
+            </div>
+        </footer> 
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="static/Homepage.js"></script>
+        <script>
+            document.getElementById("register").onclick = function() {
+                  document.getElementById("loginpage").style.display = "none";
+                  document.getElementById("registrationform").style.display = "block";
+                  document.getElementById("register").style.display = "none";
+            }
+        </script>
+        <script>
+            $("#registrationform").submit(function(event){
+                event.preventDefault(); //prevent default action
+                var post_url = $(this).attr("action"); //get form action url
+                var form_data = $(this).serialize(); //Encode form elements for submission
+
+                $.post( post_url, form_data, function( response ) {
+                  $("#server-results").html( response );
+                  $("#registrationform").hide()
+                });
+            });
+        </script>
+    </body>
+</html>
+
+
+       
+
+        
