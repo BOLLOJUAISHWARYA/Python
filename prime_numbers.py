@@ -1,3 +1,6 @@
+
+#Taking input from user to count/print prime numbers
+
 a=int(input("Enter a Number :"))
 count = 0
 for num in range(1, a+1):
